@@ -289,7 +289,7 @@ class CharacterDesignerAgent(AgentInterface):
                 if json_match:
                     eval_result = json.loads(json_match.group())
                     return eval_result
-            except:
+            except (json.JSONDecodeError, AttributeError, TypeError):
                 pass
 
             return {"score": 5, "issues": ["评估解析失败"], "is_acceptable": True}

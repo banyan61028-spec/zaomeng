@@ -1,11 +1,11 @@
 [project]
 name = "xiaoyunque-backend"
 version = "0.1.0"
-description = "FastAPI backend for the XiaoYunQue video generation workflow"
+description = "FastAPI backend for the Zaomeng AI video creation workflow"
 authors = [
     {name = "HITsz-TMG"}
 ]
-readme = "../../../README.md"
+readme = "../README.md"
 requires-python = ">=3.10"
 license = {text = "MIT"}
 dependencies = [
@@ -52,3 +52,4 @@ ignore = ["E501"]
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
 testpaths = ["tests"]
+pythonpath = ["."]

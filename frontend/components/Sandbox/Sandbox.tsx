@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef, DragEvent } from 'react';
-import { Sparkles, Image, Video, MessageSquare, Zap, Loader2, Copy, Check, Trash2, X, FolderOpen, Upload, Globe, Hexagon } from 'lucide-react';
+import { Sparkles, Image as ImageIcon, Video, MessageSquare, Zap, Loader2, Copy, Check, Trash2, X, FolderOpen, Upload, Globe, Hexagon } from 'lucide-react';
 import { useSearchParams } from 'next/navigation';
 import type { ModelOption, ProviderGroup } from '@/config/models';
 import { fetchSandboxTasks, uploadMedia } from '@/lib/workflowApi';
@@ -55,7 +55,7 @@ interface Tool {
 
 const tools: Tool[] = [
   { id: 'llm', name: 'LLM 对话', description: '文字生成', icon: <MessageSquare className="w-5 h-5" /> },
-  { id: 'vlm', name: '图片理解', description: '分析图片内容', icon: <Image className="w-5 h-5" /> },
+  { id: 'vlm', name: '图片理解', description: '分析图片内容', icon: <ImageIcon className="w-5 h-5" /> },
   { id: 't2i', name: '文生图', description: '文字生成图片', icon: <Sparkles className="w-5 h-5" /> },
   { id: 'i2i', name: '图生图', description: '图片风格转换', icon: <Zap className="w-5 h-5" /> },
   { id: 'video', name: '视频生成', description: '图生视频/文生视频', icon: <Video className="w-5 h-5" /> },
@@ -492,7 +492,7 @@ export default function SandboxPage() {
 
     try {
       let apiUrl = '';
-      let body: Record<string, unknown> = {
+      const body: Record<string, unknown> = {
         model: selectedModel,
         prompt: prompt,
       };

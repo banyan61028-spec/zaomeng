@@ -469,7 +469,7 @@ class ReferenceGeneratorAgent(AgentInterface):
                 if json_match:
                     eval_result = json.loads(json_match.group())
                     return eval_result
-            except:
+            except (json.JSONDecodeError, AttributeError, TypeError):
                 pass
 
             return {

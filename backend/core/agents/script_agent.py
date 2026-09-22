@@ -224,6 +224,7 @@ class ScriptWriterAgent(AgentInterface):
         async def run_smart_continue():
             import copy
             sid = input_data.get("session_id", "")
+            is_zh = True
             llm_model = self._require_input(input_data, "llm_model")
             web_search = input_data.get("web_search", False)
             episodes_to_add = intervention.get("episodes_to_add", 1)
